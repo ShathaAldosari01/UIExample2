@@ -3,14 +3,17 @@ package com.example.uiexample2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup radioGroup;
+    private ProgressBar progressBar;
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -49,5 +52,21 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 //                }
 //            }
 //        });
+
+        progressBar = findViewById(R.id.progressPar);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i=0; i< 10; i++){
+                    progressBar.incrementProgressBy(10);
+                    SystemClock.sleep(500);
+                }
+            }
+        });
+        thread.start();
+
+        //get progras, don't forget to store it in varble
+        progressBar.getProgress();
     }
 }

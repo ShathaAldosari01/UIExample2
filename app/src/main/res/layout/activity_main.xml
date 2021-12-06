@@ -8,18 +8,19 @@
     android:background="#F6F5F5">
 
     <RelativeLayout
+        android:id="@+id/ganderDiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp">
 
         <TextView
+            android:id="@+id/ganderTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ganderTxt"
             android:text="Gander"
-            android:textStyle="bold"
+            android:textColor="#00334E"
             android:textSize="40dp"
-            android:textColor="#00334E"/>
+            android:textStyle="bold" />
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,5 +49,18 @@
                 />
         </RadioGroup>
     </RelativeLayout>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressPar"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:max="100"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+<!--    android:progress="10"-->
 
 </RelativeLayout>
